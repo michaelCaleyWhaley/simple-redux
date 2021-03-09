@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Home({ name, email }) {
   return (
     <>
-      <h2>Home</h2>
+      <h1>Home</h1>
       <p>Name: {name}</p>
       <p>Email: {email}</p>
       <button type="button">

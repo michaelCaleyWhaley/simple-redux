@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateName, updateEmail } from "./redux/actions";
+import { updateName, updateEmail } from "../../redux/actions";
 
 function About({ name, email, dispatchUpdateName, dispatchUpdateEmail }) {
   const history = useHistory();
@@ -11,7 +11,7 @@ function About({ name, email, dispatchUpdateName, dispatchUpdateEmail }) {
 
   return (
     <>
-      <h2>About</h2>
+      <h1>About</h1>
       <form>
         <label>
           Name:
@@ -59,4 +59,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+export { About };
 export default connect(mapStateToProps, mapDispatchToProps)(About);
