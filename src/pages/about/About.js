@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateName, updateEmail } from "../../redux/actions";
+
+import "./About.css";
 
 function About({ name, email, dispatchUpdateName, dispatchUpdateEmail }) {
   const history = useHistory();
@@ -9,13 +11,24 @@ function About({ name, email, dispatchUpdateName, dispatchUpdateEmail }) {
     history.goBack();
   }
 
+  const [h1Colour, setH1Colour] = useState(false);
+
   return (
     <>
-      <h1>About</h1>
+      <h1
+        data-testid="about-heading"
+        className={h1Colour ? "heading" : "heading--alt"}
+        onClick={() => {
+          setH1Colour(!h1Colour);
+        }}
+      >
+        About
+      </h1>
       <form>
         <label>
           Name:
           <input
+            data-testid="about-input"
             type="text"
             id="name"
             name="name"
